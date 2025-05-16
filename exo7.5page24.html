@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js</title> 
+    
+</head>
+<body>
+    <script>
+        var login="prof";
+        var password="abcd";
+        // declaration des variables globales
+        var x,y,z;
+        x=prompt("entrer votre login"," ");
+        if(!x){
+            document.write();
+        }else if(x){
+            if(x!=login){
+            verifLogin();
+             }
+            verifPassword();
+          
+        }
+        
+       
+
+         function verifLogin(){
+                alert('pas le bon login reesayer');
+                 x=prompt("entrer votre login"," ");
+            
+        }
+
+        function verifPassword(){
+        y=prompt("entrer votre password"," ");
+        if(y==password){
+            PRENOM();
+        }else{
+            TestLog=0;  
+            while( y!=password){
+                TestLog++;
+                alert('pas le bon password reesayer');
+                y=prompt("entrer votre password"," ");
+                if(TestLog<=2 && y==password){
+                    PRENOM();
+                }else if(TestLog==2 && y!=password){
+                    alert("pas le bon password trop de tentatives acces refusé");
+                    break;
+                }
+            }
+        }
+        }
+        
+        function PRENOM(){
+        z=prompt("entrer votre prenom");
+        t=confirm("votre prenom est bien "+z+" ?");
+        document.write("vos informations saisies sont:<br>Login: "+x+"<br>password: "+y+"<br>prenom: "+z);
+        }
+
+
+
+    </script> 
+</body>
+</html>
